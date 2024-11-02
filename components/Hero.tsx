@@ -1,9 +1,13 @@
 import React from "react";
+import TypeWriterCustom from "./Hero Components/typewriter";
 
 function Hero() {
   return (
-    <div className="flex md:min-h-[100vh] max-h-[1000px] items-center mx-auto max-w-screen-xl px-4 text-center md:text-left">
-      <div className="w-full md:w-2/3">
+    <div
+      className="flex max-h-[1000px] items-center mx-auto max-w-screen-xl px-4 text-center md:text-left"
+      style={{ height: "calc(100vh - 80px)" }}
+    >
+      <div className="w-full md:w-2/3 pt-20 md:pt-0">
         <div className="flex justify-center md:justify-start gap-2 font-semibold text-pink">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -25,16 +29,17 @@ function Hero() {
             👋,
           </span>
         </div>
-        <div className="text-4xl md:text-7xl font-roboto text-[#223d4a] font-semibold">
+        <div className="text-4xl md:text-7xl font-roboto text-[#223d4a] font-semibold mt-6">
           I'm Percy,
         </div>
-        <div className="text-4xl md:text-5xl lg:text-7xl font-roboto mt-2 text-[#122e3c] font-bold">
-          Fullstack Developer.
+        <div className="text-4xl md:text-5xl flex lg:text-7xl font-roboto mt-3 text-[#122e3c] font-bold">
+          <div className="w-0 overflow-hidden">|</div>
+          <TypeWriterCustom />
         </div>
         <p className="mt-4 text-lg md:text-xl text-gray-700 md:border-s-2 md:ps-2 lg:ps-4 py-1 border-pink rounded-l-md">
           I design and develop experiences that make people's lives simpler
-          through web and mobile apps. I work with HTML, CSS, JavaScript, React,
-          Angular, React Native, Flutter, Nest.js and Next.js.
+          through web and mobile apps. I work with Figma, HTML, CSS, JavaScript,
+          React, Angular, React Native, Flutter, Nest.js and Next.js.
         </p>
         <div className="flex justify-center md:justify-start space-x-4 md:ms-5 mt-3">
           {/* LinkedIn Link */}
@@ -42,7 +47,7 @@ function Hero() {
             href="www.linkedin.com/in/tanyitiku-arrey-652574270"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-gray-700 hover:text-blue-600"
+            className="flex items-center text-gray-700 hover:text-[#223d4a] text-2xl"
             aria-label="LinkedIn"
           >
             <svg
@@ -59,7 +64,7 @@ function Hero() {
             href="https://github.com/percyarrey?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-gray-700 hover:text-blue-600"
+            className="flex items-center text-gray-700 hover:text-[#223d4a] text-2xl"
             aria-label="GitHub"
           >
             <svg
