@@ -1,13 +1,15 @@
 import React from "react";
 import TypeWriterCustom from "./Hero Components/typewriter";
+import HeroThumbnail from "./Hero Components/heroThumbnail";
+import { Meteors } from "./ui/meteors";
 
 function Hero() {
   return (
     <div
-      className="flex max-h-[1000px] items-center mx-auto max-w-screen-xl px-4 text-center md:text-left"
-      style={{ height: "calc(100vh - 80px)" }}
+      className="md:flex items-center mx-auto max-w-screen-xl px-4 text-center md:text-left relative overflow-x-hidden"
+      style={{ minHeight: "calc(100vh - 80px)" }}
     >
-      <div className="w-full md:w-2/3 pt-20 md:pt-0">
+      <div className="w-full md:w-7/12 pt-20 md:pt-0">
         <div className="flex justify-center md:justify-start gap-2 font-semibold text-pink">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +34,7 @@ function Hero() {
         <div className="text-4xl md:text-7xl font-roboto text-[#223d4a] font-semibold mt-6">
           I'm Percy,
         </div>
-        <div className="text-4xl md:text-5xl flex lg:text-7xl font-roboto mt-3 text-[#122e3c] font-bold">
+        <div className="text-4xl md:text-5xl flex lg:text-7xl whitespace-nowrap  font-roboto mt-3 text-[#122e3c] font-bold justify-center md:justify-start ">
           <div className="w-0 overflow-hidden">|</div>
           <TypeWriterCustom />
         </div>
@@ -78,6 +80,11 @@ function Hero() {
           </a>
         </div>
       </div>
+      <div className=" w-full md:w-5/12 h-full flex items-center overflow-hidden ">
+        <HeroThumbnail />
+      </div>
+      {/* Meaty part - Meteor effect */}
+      <Meteors number={10} className="bg-blue" />
     </div>
   );
 }

@@ -18,9 +18,13 @@ export default function Header() {
             </span>
           </a>
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-[#E57F84] bg-[linear-gradient(110deg,#ffffff,45%,#E57F84,45.1%,#ffffff)] bg-[length:200%_100%] px-6 font-medium text-[#223d4a] transition-colors focus:outline-none focus:ring-2 focus:ring-[#E57F84] focus:ring-offset-2 focus:ring-offset-white">
+            <a
+              href="/resume.pdf"
+              download="resume.pdf"
+              className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-[#E57F84] bg-[linear-gradient(110deg,#ffffff,45%,#E57F84,45.1%,#ffffff)] bg-[length:200%_100%] px-6 font-medium text-[#223d4a] transition-colors focus:outline-none focus:ring-2 focus:ring-[#E57F84] focus:ring-offset-2 focus:ring-offset-white"
+            >
               Resume
-            </button>
+            </a>
             <button
               className="text-[#E57F84] border border-[#E57F84] bg-transparent hover:bg-[#E57F84] hover:text-white focus:ring-4 focus:ring-[#E57F84] font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none md:hidden"
               type="button"

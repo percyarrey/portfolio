@@ -13,6 +13,7 @@ function TypeWriterCustom() {
         ]}
         loop={true}
         deleteSpeed={50}
+        typeSpeed={80}
         delaySpeed={2000}
         cursor={true}
         cursorStyle="|"
