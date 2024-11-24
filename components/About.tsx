@@ -248,12 +248,12 @@ function About() {
               ))}
             </div>
             {/* Content area */}
-            <div className="flex-1">
-              <div className="flex md:hidden space-x-4 border-b border-cyan-300 overflow-x-auto">
+            <div className="flex-1 overflow-x-auto">
+              <div className="flex md:hidden space-x-4 border-b border-cyan-300 overflow-x-auto overflow-y-visible">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
-                    className={`py-2 px-2 text-sm font-medium relative -bottom-[3px] ${
+                    className={`py-2 px-2 text-sm font-medium  ${
                       activeTab === tab.id
                         ? "border-b-4 border-cyan-400  text-blue font-semibold"
                         : "text-gray-600 hover:text-blue"

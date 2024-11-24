@@ -46,7 +46,7 @@ function Hero() {
         <div className="flex justify-center md:justify-start space-x-4 md:ms-5 mt-3">
           {/* LinkedIn Link */}
           <a
-            href="www.linkedin.com/in/tanyitiku-arrey-652574270"
+            href="https://www.linkedin.com/in/tanyitiku-arrey-652574270"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center text-gray-700 hover:text-[#223d4a] text-2xl"
@@ -76,6 +76,23 @@ function Hero() {
               className="w-8 h-8"
             >
               <path d="M12 .297c-6.627 0-12 5.373-12 12 0 5.304 3.438 9.8 8.205 11.387.6.111.82-.261.82-.577 0-.285-.011-1.236-.017-2.238-3.338.725-4.043-1.607-4.043-1.607-.546-1.387-1.333-1.757-1.333-1.757-1.089-.743.083-.727.083-.727 1.205.085 1.838 1.235 1.838 1.235 1.07 1.832 2.807 1.303 3.493.996.108-.775.419-1.303.762-1.603-2.665-.303-5.467-1.332-5.467-5.935 0-1.314.469-2.39 1.236-3.236-.124-.303-.537-1.525.115-3.176 0 0 1.007-.322 3.301 1.228a11.535 11.535 0 0 1 3.006-.404c1.019.004 2.045.138 3.006.404 2.294-1.55 3.301-1.228 3.301-1.228.653 1.651.239 2.873.115 3.176.767.846 1.236 1.922 1.236 3.236 0 4.619-2.807 5.628-5.474 5.927.43.371.815 1.097.815 2.207 0 1.594-.014 2.878-.014 3.27 0 .319.218.693.825.577C20.563 22.1 24 17.604 24 12.297c0-6.627-5.373-12-12-12z" />
+            </svg>
+          </a>
+          {/* Upwork Link */}
+          <a
+            href="https://www.upwork.com/freelancers/~0198f390b8ab3fff21?mp_source=share" // Replace with your actual Upwork profile link
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-gray-700 hover:text-[#223d4a] text-2xl"
+            aria-label="Upwork"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              className="w-8 h-8"
+            >
+              <path d="M12 0C5.372 0 0 5.372 0 12c0 6.628 5.372 12 12 12 6.628 0 12-5.372 12-12S18.628 0 12 0zm0 22c-5.522 0-10-4.478-10-10S6.478 2 12 2s10 4.478 10 10-4.478 10-10 10zm-1-15h2v6h-2zm0 8h2v2h-2z" />
             </svg>
           </a>
         </div>
