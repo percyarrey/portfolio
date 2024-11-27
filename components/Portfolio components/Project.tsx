@@ -1,0 +1,40 @@
+"use client";
+import React, { useEffect, useState } from "react";
+
+function Project({
+  LoadingSpinner,
+  project,
+}: {
+  LoadingSpinner: any;
+  project: any;
+}) {
+  const [loading, setLoading] = useState(true); // Loading state for images
+  const [loadProject, setLoadProject] = useState(false);
+  useEffect(() => {
+    setLoadProject(true);
+  }, []);
+  return (
+    <>
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-white z-10">
+          <LoadingSpinner />
+        </div>
+      )}
+      {loadProject && (
+        <img
+          src={"images/projects/" + project.images[0]}
+          alt={project.name}
+          className="w-full h-full object-cover"
+          onLoad={() => {
+            setLoading(false);
+          }} // Update loading state when the image is loaded
+          onError={() => {
+            setLoading(false);
+          }} // Ensure loading state is reset on error
+        />
+      )}
+    </>
+  );
+}
+
+export default Project;

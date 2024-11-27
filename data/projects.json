@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Boat Engine Part",
+    "description": "A complete E-commerce website build Next.js,Tailwind.css and MongoDB.",
+    "link": "https://boat-engine-part.vercel.app",
+    "images": ["boat/img1.png", "boat/img2.jpg", "boat/img3.jpg"],
+    "tools": ["Next.js"]
+  },
+  {
+    "name": "Project Beta",
+    "description": "An e-commerce site for buying and selling handmade crafts.",
+    "link": "https://example.com/project-beta",
+    "images": ["boat/img1.png", "img2.jpg", "img3.jpg"],
+    "tools": ["Angular", "Laravel"]
+  },
+  {
+    "name": "Project Gamma",
+    "description": "A mobile app for tracking fitness and health goals.",
+    "link": "https://example.com/project-gamma",
+    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
+    "tools": ["React Native", "Bootstrap"]
+  },
+  {
+    "name": "Project Delta",
+    "description": "A personal blog for sharing travel experiences.",
+    "link": "https://example.com/project-delta",
+    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
+    "tools": ["Next.js", "Bootstrap"]
+  },
+  {
+    "name": "Project Epsilon",
+    "description": "A real-time chat application for team collaboration.",
+    "link": "https://example.com/project-epsilon",
+    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
+    "tools": ["Angular", "Laravel"]
+  },
+  {
+    "name": "Project Zeta",
+    "description": "A portfolio website showcasing my design work.",
+    "link": "https://example.com/project-zeta",
+    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
+    "tools": ["Next.js", "Bootstrap"]
+  },
+  {
+    "name": "Project Eta",
+    "description": "An online learning platform for coding tutorials.",
+    "link": "https://example.com/project-eta",
+    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
+    "tools": ["Angular", "Laravel"]
+  },
+  {
+    "name": "Project Theta",
+    "description": "A financial tracker to manage personal budgets.",
+    "link": "https://example.com/project-theta",
+    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
+    "tools": ["Next.js", "Bootstrap"]
+  },
+  {
+    "name": "Project Iota",
+    "description": "A recipe app for discovering and sharing cooking ideas.",
+    "link": "https://example.com/project-iota",
+    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
+    "tools": ["Angular", "Laravel"]
+  },
+  {
+    "name": "Project Kappa",
+    "description": "A community forum for discussing technology trends.",
+    "link": "https://example.com/project-kappa",
+    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
+    "tools": ["Next.js", "tailwind.css"]
+  }
+]

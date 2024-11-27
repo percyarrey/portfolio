@@ -1,4 +1,6 @@
 import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Copyright from "@/components/Copyright";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Portfolio from "@/components/Portfolio";
@@ -17,6 +19,10 @@ export default function Home() {
         <About />
         {/* PORTFOLIO */}
         <Portfolio />
+        {/* CONTACT */}
+        <Contact />
+        {/* COPYRIGHT */}
+        <Copyright />
       </div>
     </div>
   );
