@@ -43,6 +43,7 @@ function Portfolio() {
   };
 
   const nextImage = () => {
+    setGalleryLoading(true);
     if (currentProject) {
       setCurrentImageIndex(
         (prevIndex) => (prevIndex + 1) % currentProject.images.length
@@ -51,6 +52,7 @@ function Portfolio() {
   };
 
   const previousImage = () => {
+    setGalleryLoading(true);
     if (currentProject) {
       setCurrentImageIndex(
         (prevIndex) =>
