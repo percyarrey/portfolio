@@ -188,6 +188,7 @@ function Portfolio(props) {
               src={
                 "images/projects/" + currentProject.images[currentImageIndex]
               }
+              fill
               alt={`Gallery image ${currentImageIndex + 1}`}
               className="h-full w-full object-contain" // Maintains aspect ratio
               onLoad={() => setGalleryLoading(false)} // Update loading state when the image is loaded

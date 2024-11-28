@@ -17,7 +17,8 @@ function Project({ LoadingSpinner, project }) {
       )}
       {loadProject && (
         <Image
-          src={"images/projects/" + project.images[0]}
+          src={"/images/projects/" + project.images[0]}
+          fill
           alt={project.name}
           className="w-full h-full object-cover object-top"
           onLoad={() => {
