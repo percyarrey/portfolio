@@ -172,7 +172,7 @@ function Portfolio() {
           <div className="relative w-[90vw] h-[90vh] flex items-center">
             <button
               onClick={closeGallery}
-              className="absolute top-4 right-4 text-white text-2xl"
+              className="absolute top-4 right-4 text-white text-2xl bg-blue rounded-full w-[2rem] h-[2rem]"
             >
               &times;
             </button>
