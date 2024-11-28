@@ -33,14 +33,14 @@ function Hero() {
           </span>
         </div>
         <div className="text-4xl md:text-7xl font-roboto text-[#223d4a] font-semibold mt-6">
-          I'm Percy,
+          {"I'm"} Percy,
         </div>
         <div className="text-4xl md:text-5xl flex lg:text-7xl whitespace-nowrap font-roboto mt-3 text-[#122e3c] font-bold justify-center md:justify-start">
           <div className="w-0 overflow-hidden">|</div>
           <TypeWriterCustom />
         </div>
         <p className="mt-4 text-lg md:text-xl text-gray-700 md:border-s-2 md:ps-2 lg:ps-4 py-1 border-pink rounded-l-md">
-          I design and develop experiences that make people's lives simpler
+          I design and develop experiences that make {"people's"} lives simpler
           through web and mobile apps. I work with Figma, HTML, CSS, JavaScript,
           React, Angular, React Native, Flutter, Nest.js, and Next.js.
         </p>

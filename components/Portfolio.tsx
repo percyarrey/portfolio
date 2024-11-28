@@ -3,12 +3,13 @@ import React, { useState } from "react";
 import projects from "../data/projects.json";
 import Project from "./Portfolio components/Project";
 import ScrollReveal from "./ui/ScrollReveal";
+import Image from "next/image";
 
 function Portfolio() {
   const [selectedTool, setSelectedTool] = useState("All");
   const [visibleCount, setVisibleCount] = useState(2);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
-  const [currentProject, setCurrentProject]: any = useState(null);
+  const [currentProject, setCurrentProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [galleryLoading, setGalleryLoading] = useState(true); // Loading state for gallery images
 
@@ -30,7 +31,7 @@ function Portfolio() {
     setVisibleCount((prevCount) => prevCount + 2);
   };
 
-  const openGallery = (project: any) => {
+  const openGallery = (project) => {
     setCurrentProject(project);
     setCurrentImageIndex(0); // Reset to the first image
     setIsGalleryOpen(true);
@@ -178,7 +179,7 @@ function Portfolio() {
                 <LoadingSpinner />
               </div>
             )}
-            <img
+            <Image
               src={
                 "images/projects/" + currentProject.images[currentImageIndex]
               }

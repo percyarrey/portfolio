@@ -12,12 +12,12 @@ function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
 
-  const handleChange = (e: any) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -74,8 +74,8 @@ function Contact() {
             Get in Touch
           </h2>
           <div className="text-gray-500 text-center">
-            I'm currently looking for new opportunities, but my inbox is always
-            open.
+            {"I'm "}currently looking for new opportunities, but my inbox is
+            always open.
             <br />
             Feel free to reach out if you just want to say hi or connect!
           </div>

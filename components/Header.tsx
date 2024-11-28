@@ -1,8 +1,12 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 "use client";
 import React, { useEffect, useState } from "react";
 try {
   require("flowbite/dist/flowbite.min.js");
-} catch (error) {}
+} catch (error) {
+  console.log(error);
+}
+import Image from "next/image";
 
 const sections = [
   { id: "hero", title: "Section 1" },
@@ -49,7 +53,7 @@ export default function Header() {
     };
   }, []);
 
-  const handleSmoothScroll = (e: any, id: any) => {
+  const handleSmoothScroll = (e, id) => {
     e.preventDefault(); // Prevent the default anchor behavior
     const targetElement = document.getElementById(id);
     if (targetElement) {
@@ -69,7 +73,7 @@ export default function Header() {
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <img src="./icon.png" className="h-8" alt="TAN TECH Logo" />
+            <Image src="./icon.png" className="h-8" alt="TAN TECH Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               TAN TECH
             </span>

@@ -6,9 +6,9 @@ import ScrollReveal from "./ui/ScrollReveal";
 function About() {
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
   const [activeTab, setActiveTab] = useState("freelancing");
-  const imageRef: any = useRef(null);
+  const imageRef = useRef(null);
 
-  const handleMouseMove = (e: any) => {
+  const handleMouseMove = (e) => {
     try {
       if (imageRef && imageRef.current) {
         const rect = imageRef.current.getBoundingClientRect();
@@ -18,7 +18,9 @@ function About() {
       } else {
         return;
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -35,7 +37,7 @@ function About() {
     { id: "education", label: "Education" },
   ];
 
-  const content: any = {
+  const content = {
     freelancing: (
       <div>
         <div className="flex gap-2">
@@ -231,7 +233,7 @@ function About() {
             </div>
             {/* WORKED */}
             <h2 className="font-extrabold font-roboto text-[#214151] flex items-center gap-2 mb-5 mt-5">
-              <div className="bg-pink w-4 h-[2px]"></div> WHERE I'VE WORKED
+              <div className="bg-pink w-4 h-[2px]"></div> WHERE {"I'VE"} WORKED
             </h2>
             <div className="mt-4 flex">
               {/* Tabs for larger screens (vertical layout) */}

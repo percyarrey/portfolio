@@ -1,13 +1,8 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-function Project({
-  LoadingSpinner,
-  project,
-}: {
-  LoadingSpinner: any;
-  project: any;
-}) {
+function Project({ LoadingSpinner, project }) {
   const [loading, setLoading] = useState(true); // Loading state for images
   const [loadProject, setLoadProject] = useState(false);
   useEffect(() => {
@@ -21,7 +16,7 @@ function Project({
         </div>
       )}
       {loadProject && (
-        <img
+        <Image
           src={"images/projects/" + project.images[0]}
           alt={project.name}
           className="w-full h-full object-cover object-top"
