@@ -1,18 +1,20 @@
 "use client"; // Ensure this is at the top if you're using Next.js with client components
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import projects from "../data/projects.json";
 import Project from "./Portfolio components/Project";
 import ScrollReveal from "./ui/ScrollReveal";
 import Image from "next/image";
 
-function Portfolio() {
+function Portfolio(props) {
   const [selectedTool, setSelectedTool] = useState("All");
   const [visibleCount, setVisibleCount] = useState(2);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [currentProject, setCurrentProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [galleryLoading, setGalleryLoading] = useState(true); // Loading state for gallery images
-
+  useEffect(() => {
+    props.handle();
+  }, []);
   const tools = [
     "All",
     "Next.js",
@@ -61,6 +63,7 @@ function Portfolio() {
       );
     }
   };
+
   return (
     <div className="mx-auto max-w-screen-xl px-4 pt-8 pb-16" id="portfolio">
       {/* TITLE */}
@@ -217,7 +220,7 @@ function Portfolio() {
 // Loading Spinner Component
 const LoadingSpinner = () => (
   <div className="loader animate-spin rounded-full border-4 border-t-4 border-blue h-12 w-12 overflow-hidden flex justify-center items-center">
-    <div className="w-full h-[4px] bg-blue "></div>
+    <div className="w-full h-[2px] bg-blue "></div>
   </div>
 );
 

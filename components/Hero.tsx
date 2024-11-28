@@ -1,9 +1,13 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import TypeWriterCustom from "./Hero Components/typewriter";
 import HeroThumbnail from "./Hero Components/heroThumbnail";
 import { Meteors } from "./ui/meteors";
 
-function Hero() {
+function Hero(props) {
+  useEffect(() => {
+    props.handle();
+  }, []);
   return (
     <div
       className="md:flex items-center mx-auto max-w-screen-xl px-4 text-center md:text-left relative overflow-x-hidden"

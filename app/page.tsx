@@ -11,8 +11,10 @@ const Contact = dynamic(() => import("@/components/Contact"));
 const Copyright = dynamic(() => import("@/components/Copyright"));
 
 const LoadingSpinner = () => (
-  <div className="flex justify-center items-center h-16">
-    <div className="animate-spin rounded-full border-4 border-t-4 border-blue-500 border-gray-200 w-16 h-16"></div>
+  <div className="flex justify-center items-center h-[15rem]">
+    <div className="animate-spin  duration-1000 rounded-full border-4 border-t-4 border-blue-500 border-gray-200  w-10 h-10 flex items-center justify-center">
+      <div className="w-full h-[2px] bg-gray-200"></div>
+    </div>
   </div>
 );
 

@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import ScrollReveal from "./ui/ScrollReveal";
 
-function About() {
+function About(props) {
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
   const [activeTab, setActiveTab] = useState("freelancing");
   const imageRef = useRef(null);
@@ -24,6 +24,7 @@ function About() {
   };
 
   useEffect(() => {
+    props.handle();
     window.addEventListener("mousemove", handleMouseMove);
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);

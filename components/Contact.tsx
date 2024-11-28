@@ -1,9 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import emailjs from "emailjs-com";
 import ScrollReveal from "./ui/ScrollReveal";
 
-function Contact() {
+function Contact(props) {
+  useEffect(() => {
+    props.handle();
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
