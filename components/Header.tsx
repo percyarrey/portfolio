@@ -1,9 +1,66 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 try {
   require("flowbite/dist/flowbite.min.js");
 } catch (error) {}
+
+const sections = [
+  { id: "hero", title: "Section 1" },
+  { id: "about", title: "Section 2" },
+  { id: "portfolio", title: "Section 3" },
+  { id: "contact", title: "Section 3" },
+];
 export default function Header() {
+  const [activeSection, setActiveSection] = useState("hero");
+  useEffect(() => {
+    const scrollPosition = window.scrollY;
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id);
+      if (element) {
+        const { offsetTop, clientHeight } = element;
+
+        if (scrollPosition >= offsetTop - clientHeight / 3) {
+          setActiveSection(section.id);
+        }
+      }
+    });
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      sections.forEach((section) => {
+        const element = document.getElementById(section.id);
+        if (element) {
+          const { offsetTop, clientHeight } = element;
+
+          if (element.id === "contact") {
+          }
+          if (scrollPosition >= offsetTop - clientHeight / 3) {
+            setActiveSection(section.id);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleSmoothScroll = (e: any, id: any) => {
+    e.preventDefault(); // Prevent the default anchor behavior
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      const offsetPosition =
+        targetElement.getBoundingClientRect().top + window.scrollY - 80; // Calculate the position with offset
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth", // Smooth scroll to the target position
+      });
+    }
+  };
   return (
     <>
       <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
@@ -56,8 +113,14 @@ export default function Header() {
             <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
                 <a
-                  href="#"
-                  className="block py-2 px-3 text-[#E57F84] font-bold bg-transparent rounded md:bg-transparent md:text-[#E57F84] md:p-0 dark:text-[#E57F84] md:dark:text-[#E57F84]"
+                  href="#hero"
+                  onClick={(e) => handleSmoothScroll(e, "hero")}
+                  className={
+                    "block py-2 px-3 rounded md:hover:text-[#E57F84] md:p-0  " +
+                    (activeSection === "hero"
+                      ? " text-[#E57F84] font-bold"
+                      : "text-gray-900 opacity-70")
+                  }
                   aria-current="page"
                 >
                   Home
@@ -65,24 +128,42 @@ export default function Header() {
               </li>
               <li>
                 <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded opacity-70 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#E57F84] md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  href="#about"
+                  onClick={(e) => handleSmoothScroll(e, "about")}
+                  className={
+                    "block py-2 px-3 rounded md:hover:text-[#E57F84] md:p-0  " +
+                    (activeSection === "about"
+                      ? " text-[#E57F84] font-bold"
+                      : "text-gray-900 opacity-70")
+                  }
                 >
                   About
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded opacity-70 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#E57F84] md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  href="#portfolio"
+                  onClick={(e) => handleSmoothScroll(e, "portfolio")}
+                  className={
+                    "block py-2 px-3 rounded md:hover:text-[#E57F84] md:p-0  " +
+                    (activeSection === "portfolio"
+                      ? " text-[#E57F84] font-bold"
+                      : "text-gray-900 opacity-70")
+                  }
                 >
                   Projects
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded opacity-70 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#E57F84] md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  href="#contact"
+                  onClick={(e) => handleSmoothScroll(e, "contact")}
+                  className={
+                    "block py-2 px-3 rounded md:hover:text-[#E57F84] md:p-0  " +
+                    (activeSection === "contact"
+                      ? " text-[#E57F84] font-bold"
+                      : "text-gray-900 opacity-70")
+                  }
                 >
                   Contact
                 </a>
@@ -127,12 +208,19 @@ export default function Header() {
           <ul className="space-y-2 font-medium">
             <li>
               <a
-                href="#"
-                className="flex items-center p-2 text-white bg-[#E57F84] rounded-lg group"
+                href="#hero"
+                onClick={(e) => handleSmoothScroll(e, "hero")}
+                className={
+                  "flex items-center p-2 rounded-lg group " +
+                  (activeSection === "hero" ? "text-white bg-[#E57F84]" : "")
+                }
                 aria-current="page"
               >
                 <svg
-                  className="w-5 h-5 text-white"
+                  className={
+                    "w-5 h-5 " +
+                    (activeSection === "hero" ? "text-white" : "text-gray-500")
+                  }
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
                   viewBox="0 0 22 21"
@@ -145,11 +233,18 @@ export default function Header() {
             </li>
             <li>
               <a
-                href="#"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                href="#about"
+                onClick={(e) => handleSmoothScroll(e, "about")}
+                className={
+                  "flex items-center p-2 rounded-lg group " +
+                  (activeSection === "about" ? "text-white bg-[#E57F84]" : "")
+                }
               >
                 <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  className={
+                    "w-5 h-5 " +
+                    (activeSection === "about" ? "text-white" : "text-gray-500")
+                  }
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
                   viewBox="0 0 20 18"
@@ -161,11 +256,22 @@ export default function Header() {
             </li>
             <li>
               <a
-                href="#"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                href="#portfolio"
+                onClick={(e) => handleSmoothScroll(e, "portfolio")}
+                className={
+                  "flex items-center p-2 rounded-lg group " +
+                  (activeSection === "portfolio"
+                    ? "text-white bg-[#E57F84]"
+                    : "")
+                }
               >
                 <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  className={
+                    "w-5 h-5 " +
+                    (activeSection === "portfolio"
+                      ? "text-white"
+                      : "text-gray-500")
+                  }
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
                   viewBox="0 0 18 20"
@@ -177,11 +283,20 @@ export default function Header() {
             </li>
             <li>
               <a
-                href="#"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                href="#contact"
+                onClick={(e) => handleSmoothScroll(e, "contact")}
+                className={
+                  "flex items-center p-2 rounded-lg group " +
+                  (activeSection === "contact" ? "text-white bg-[#E57F84]" : "")
+                }
               >
                 <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  className={
+                    "w-5 h-5 " +
+                    (activeSection === "contact"
+                      ? "text-white"
+                      : "text-gray-500")
+                  }
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 18 16"

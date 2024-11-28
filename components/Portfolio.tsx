@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import projects from "../data/projects.json";
 import Project from "./Portfolio components/Project";
+import ScrollReveal from "./ui/ScrollReveal";
 
 function Portfolio() {
   const [selectedTool, setSelectedTool] = useState("All");
@@ -11,7 +12,14 @@ function Portfolio() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [galleryLoading, setGalleryLoading] = useState(true); // Loading state for gallery images
 
-  const tools = ["All", "Next.js", "Angular", "Laravel", "Bootstrap"];
+  const tools = [
+    "All",
+    "Next.js",
+    "Angular",
+    "Laravel",
+    "React Native",
+    "Bootstrap",
+  ];
 
   const filteredProjects =
     selectedTool === "All"
@@ -51,107 +59,109 @@ function Portfolio() {
     }
   };
   return (
-    <div className="mx-auto max-w-screen-xl px-4 pt-8">
+    <div className="mx-auto max-w-screen-xl px-4 pt-8 pb-16" id="portfolio">
       {/* TITLE */}
       <div className="text-4xl md:text-5xl text-blue font-bold font-roboto flex items-center gap-8">
         <span className="whitespace-nowrap">Portfolio</span>
         <div className="w-full bg-blue h-[1px] rounded-xl opacity-70"></div>
       </div>
 
-      {/* Tabs for filtering */}
-      <div className="mt-9">
-        <div className="flex space-x-4 w-full overflow-x-auto">
-          {tools.map((tool) => (
-            <button
-              key={tool}
-              onClick={() => setSelectedTool(tool)}
-              className={`px-4 py-2 rounded-lg transition-colors ${
-                selectedTool === tool
-                  ? "bg-cyan-600 text-white"
-                  : "bg-gray-200 text-gray-800 hover:bg-cyan-500 hover:text-white"
-              }`}
+      <ScrollReveal>
+        {/* Tabs for filtering */}
+        <div className="mt-9">
+          <div className="flex space-x-4 w-full overflow-x-auto">
+            {tools.map((tool) => (
+              <button
+                key={tool}
+                onClick={() => setSelectedTool(tool)}
+                className={`px-4 py-2 rounded-lg transition-colors ${
+                  selectedTool === tool
+                    ? "bg-cyan-600 text-white"
+                    : "bg-gray-200 text-gray-800 hover:bg-cyan-500 hover:text-white"
+                }`}
+              >
+                {tool}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Projects */}
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 gap-y-[6rem]">
+          {filteredProjects.slice(0, visibleCount).map((project, index) => (
+            <div
+              key={index}
+              className="relative border rounded-lg shadow-lg  h-[22rem]  transition-transform duration-300 hover:scale-[1.01]"
             >
-              {tool}
-            </button>
+              <Project LoadingSpinner={LoadingSpinner} project={project} />
+
+              <div className="absolute rounded-lg bg-opacity-15 bg-cyan-400 inset-0 flex items-center cursor-pointer justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                <button
+                  onClick={() => openGallery(project)}
+                  className="w-full h-full flex justify-center items-center"
+                >
+                  <span className="text-white bg-blue rounded-full p-2">
+                    <svg
+                      fill="none"
+                      height="24"
+                      strokeWidth="1.5"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15 9L20 4M20 4V8M20 4H16"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M9 15L4 20M4 20V16M4 20H8"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div className="p-4 z-[11] bg-white absolute -bottom-[4.5rem]  w-[80%] md:w-[70%] rounded-md shadow-lg left-[10%] text-center md:left-[15%]">
+                <h3 className="text-xl font-semibold text-blue">
+                  {project.name}
+                </h3>
+                <p className="text-gray-500 text-md">{project.description}</p>
+                <div className="mt-1">
+                  <span className="text-sm font-medium text-gray-600">
+                    Tools: {project.tools.join(", ")}
+                  </span>
+                </div>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-block text-pink underline px-4 py-2 rounded"
+                  >
+                    View Project
+                  </a>
+                )}
+              </div>
+            </div>
           ))}
         </div>
-      </div>
 
-      {/* Projects */}
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 gap-y-[6rem]">
-        {filteredProjects.slice(0, visibleCount).map((project, index) => (
-          <div
-            key={index}
-            className="relative border rounded-lg shadow-lg  h-[22rem]  transition-transform duration-300 hover:scale-[1.01]"
-          >
-            <Project LoadingSpinner={LoadingSpinner} project={project} />
-
-            <div className="absolute rounded-lg bg-opacity-15 bg-cyan-400 inset-0 flex items-center cursor-pointer justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-              <button
-                onClick={() => openGallery(project)}
-                className="w-full h-full flex justify-center items-center"
-              >
-                <span className="text-white bg-blue rounded-full p-2">
-                  <svg
-                    fill="none"
-                    height="24"
-                    strokeWidth="1.5"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 9L20 4M20 4V8M20 4H16"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M9 15L4 20M4 20V16M4 20H8"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </div>
-            <div className="p-4 z-[11] bg-white absolute -bottom-[4.5rem]  w-[80%] md:w-[70%] rounded-md shadow-lg left-[10%] text-center md:left-[15%]">
-              <h3 className="text-xl font-semibold text-blue">
-                {project.name}
-              </h3>
-              <p className="text-gray-500 text-md">{project.description}</p>
-              <div className="mt-1">
-                <span className="text-sm font-medium text-gray-600">
-                  Tools: {project.tools.join(", ")}
-                </span>
-              </div>
-              {project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-block text-pink underline px-4 py-2 rounded"
-                >
-                  View Project
-                </a>
-              )}
-            </div>
+        {/* Show More Button */}
+        {visibleCount < filteredProjects.length && (
+          <div className="mt-24 text-center">
+            <button
+              onClick={handleShowMore}
+              className="px-4 py-2 bg-blue text-white rounded hover:bg-cyan-700 transition-colors"
+            >
+              Show More
+            </button>
           </div>
-        ))}
-      </div>
-
-      {/* Show More Button */}
-      {visibleCount < filteredProjects.length && (
-        <div className="mt-24 text-center">
-          <button
-            onClick={handleShowMore}
-            className="px-4 py-2 bg-blue text-white rounded hover:bg-cyan-700 transition-colors"
-          >
-            Show More
-          </button>
-        </div>
-      )}
+        )}
+      </ScrollReveal>
 
       {/* Image Gallery Modal */}
       {isGalleryOpen && currentProject && (

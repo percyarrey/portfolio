@@ -24,7 +24,7 @@ function Project({
         <img
           src={"images/projects/" + project.images[0]}
           alt={project.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
           onLoad={() => {
             setLoading(false);
           }} // Update loading state when the image is loaded

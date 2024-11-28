@@ -75,7 +75,7 @@ const HeroThumbnail = () => {
         height={400}
         width={400}
         priority
-        className="rounded-full z-10 w-auto h-auto"
+        className="rounded-full z-10 "
       />
 
       <style jsx>{`

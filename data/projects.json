@@ -1,72 +1,55 @@
 [
   {
     "name": "Boat Engine Part",
-    "description": "A complete E-commerce website build Next.js,Tailwind.css and MongoDB.",
+    "description": "A complete e-commerce website built with Next.js, Tailwind CSS, and MongoDB.",
     "link": "https://boat-engine-part.vercel.app",
-    "images": ["boat/img1.png", "boat/img2.jpg", "boat/img3.jpg"],
+    "images": [
+      "boat/img1.png",
+      "boat/img2.png",
+      "boat/img3.png",
+      "boat/img4.png"
+    ],
     "tools": ["Next.js"]
   },
   {
-    "name": "Project Beta",
-    "description": "An e-commerce site for buying and selling handmade crafts.",
-    "link": "https://example.com/project-beta",
-    "images": ["boat/img1.png", "img2.jpg", "img3.jpg"],
-    "tools": ["Angular", "Laravel"]
+    "name": "JobMaster",
+    "description": "A remote job finder app created with Angular.js, PrimeNG, Nest.js, and PostgreSQL.",
+    "link": "https://github.com/percyarrey/JobMaster",
+    "images": [
+      "jobmaster/img1.png",
+      "jobmaster/img2.png",
+      "jobmaster/img3.png",
+      "jobmaster/img4.png"
+    ],
+    "tools": ["Angular"]
   },
   {
-    "name": "Project Gamma",
-    "description": "A mobile app for tracking fitness and health goals.",
-    "link": "https://example.com/project-gamma",
-    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
-    "tools": ["React Native", "Bootstrap"]
+    "name": "Boyong Lab Paps Solution",
+    "description": "A static website built for Boyong Lab using HTML, JavaScript, and Bootstrap.",
+    "link": "https://github.com/percyarrey/Boyon-Lab-Paps-Solution",
+    "images": [
+      "enterprise/img1.png",
+      "enterprise/img2.png",
+      "enterprise/img3.png"
+    ],
+    "tools": ["Bootstrap"]
   },
   {
-    "name": "Project Delta",
-    "description": "A personal blog for sharing travel experiences.",
-    "link": "https://example.com/project-delta",
-    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
-    "tools": ["Next.js", "Bootstrap"]
+    "name": "Boyong Lab Training",
+    "description": "A training program website used by Boyong Lab Enterprise.",
+    "link": "http://www.boyonglab.training/",
+    "images": ["training/img1.png"],
+    "tools": ["Bootstrap"]
   },
   {
-    "name": "Project Epsilon",
-    "description": "A real-time chat application for team collaboration.",
-    "link": "https://example.com/project-epsilon",
-    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
-    "tools": ["Angular", "Laravel"]
-  },
-  {
-    "name": "Project Zeta",
-    "description": "A portfolio website showcasing my design work.",
-    "link": "https://example.com/project-zeta",
-    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
-    "tools": ["Next.js", "Bootstrap"]
-  },
-  {
-    "name": "Project Eta",
-    "description": "An online learning platform for coding tutorials.",
-    "link": "https://example.com/project-eta",
-    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
-    "tools": ["Angular", "Laravel"]
-  },
-  {
-    "name": "Project Theta",
-    "description": "A financial tracker to manage personal budgets.",
-    "link": "https://example.com/project-theta",
-    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
-    "tools": ["Next.js", "Bootstrap"]
-  },
-  {
-    "name": "Project Iota",
-    "description": "A recipe app for discovering and sharing cooking ideas.",
-    "link": "https://example.com/project-iota",
-    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
-    "tools": ["Angular", "Laravel"]
-  },
-  {
-    "name": "Project Kappa",
-    "description": "A community forum for discussing technology trends.",
-    "link": "https://example.com/project-kappa",
-    "images": ["img1.jpg", "img2.jpg", "img3.jpg"],
-    "tools": ["Next.js", "tailwind.css"]
+    "name": "Boyong Lab Website",
+    "description": "The main website for Boyong Lab, built with HTML, CSS, and Bootstrap.",
+    "link": "https://github.com/percyarrey/Boyong-Lab",
+    "images": [
+      "boyonglab/img1.png",
+      "boyonglab/img2.png",
+      "boyonglab/img3.png"
+    ],
+    "tools": ["Bootstrap"]
   }
 ]

@@ -8,6 +8,7 @@ function Hero() {
     <div
       className="md:flex items-center mx-auto max-w-screen-xl px-4 text-center md:text-left relative overflow-x-hidden"
       style={{ minHeight: "calc(100vh - 80px)" }}
+      id="hero"
     >
       <div className="w-full md:w-7/12 pt-20 md:pt-0">
         <div className="flex justify-center md:justify-start gap-2 font-semibold text-pink">
