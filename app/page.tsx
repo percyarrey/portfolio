@@ -9,46 +9,26 @@ import Portfolio from "@/components/Portfolio";
 
 const LoadingSpinner = () => (
   <div className="flex justify-center items-center h-16">
-    <div className="loader"></div>
-    <style jsx>{`
-      .loader {
-        border: 8px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        border-top: 8px solid #3498db;
-        width: 50px;
-        height: 50px;
-        animation: spin 1s linear infinite;
-      }
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-    `}</style>
+    <div className="animate-spin rounded-full border-4 border-t-4 border-blue-500 border-gray-200 w-16 h-16"></div>
   </div>
 );
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
-  const [sectionsLoaded, setSectionsLoaded] = useState(0);
+  const [loadedSections, setLoadedSections] = useState([]);
   const sections = [
-    <Hero key="hero" />,
-    <About key="about" />,
-    <Portfolio key="portfolio" />,
-    <Contact key="contact" />,
-    <Copyright key="copyright" />,
+    { component: <Hero />, key: "hero" },
+    { component: <About />, key: "about" },
+    { component: <Portfolio />, key: "portfolio" },
+    { component: <Contact />, key: "contact" },
+    { component: <Copyright />, key: "copyright" },
   ];
 
   useEffect(() => {
     const loadSections = async () => {
       for (const section of sections) {
         await new Promise((resolve) => setTimeout(resolve, 500)); // Simulate loading
-        setSectionsLoaded((prev) => prev + 1);
+        setLoadedSections((prev) => [...prev, section]);
       }
-      setLoading(false);
     };
 
     loadSections();
@@ -60,7 +40,13 @@ export default function Home() {
       <Header />
 
       <div className="mt-[80px]">
-        {loading ? <LoadingSpinner /> : sections.slice(0, sectionsLoaded)}
+        {loadedSections.length < sections.length ? (
+          <LoadingSpinner />
+        ) : (
+          loadedSections.map((section) => (
+            <div key={section.key}>{section.component}</div>
+          ))
+        )}
       </div>
     </div>
   );
