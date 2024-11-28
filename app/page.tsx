@@ -1,11 +1,14 @@
 "use client";
-import { useEffect, useState } from "react";
-import About from "@/components/About";
-import Contact from "@/components/Contact";
-import Copyright from "@/components/Copyright";
+import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Portfolio from "@/components/Portfolio";
+
+// Dynamically import components
+const Hero = dynamic(() => import("@/components/Hero"));
+const About = dynamic(() => import("@/components/About"));
+const Portfolio = dynamic(() => import("@/components/Portfolio"));
+const Contact = dynamic(() => import("@/components/Contact"));
+const Copyright = dynamic(() => import("@/components/Copyright"));
 
 const LoadingSpinner = () => (
   <div className="flex justify-center items-center h-16">
@@ -14,25 +17,31 @@ const LoadingSpinner = () => (
 );
 
 export default function Home() {
-  const [loadedSections, setLoadedSections] = useState([]);
-  const sections = [
-    { component: <Hero />, key: "hero" },
-    { component: <About />, key: "about" },
-    { component: <Portfolio />, key: "portfolio" },
-    { component: <Contact />, key: "contact" },
-    { component: <Copyright />, key: "copyright" },
-  ];
+  const [component1Loaded, setComponent1Loaded] = useState(false);
+  const [component2Loaded, setComponent2Loaded] = useState(false);
+  const [component3Loaded, setComponent3Loaded] = useState(false);
+  const [component4Loaded, setComponent4Loaded] = useState(false);
+  const [component5Loaded, setComponent5Loaded] = useState(false);
 
   useEffect(() => {
-    const loadSections = async () => {
-      for (const section of sections) {
-        await new Promise((resolve) => setTimeout(resolve, 500)); // Simulate loading
-        setLoadedSections((prev) => [...prev, section]);
-      }
-    };
-
-    loadSections();
+    setComponent1Loaded(true); // Load the Hero component first
   }, []);
+
+  const handleComponent2 = () => {
+    setComponent2Loaded(true); // Load the About component
+  };
+
+  const handleComponent3 = () => {
+    setComponent3Loaded(true); // Load the Portfolio component
+  };
+
+  const handleComponent4 = () => {
+    setComponent4Loaded(true); // Load the Contact component
+  };
+
+  const handleComponent5 = () => {
+    setComponent5Loaded(true); // Load the Copyright component
+  };
 
   return (
     <div>
@@ -40,12 +49,35 @@ export default function Home() {
       <Header />
 
       <div className="mt-[80px]">
-        {loadedSections.length < sections.length ? (
-          <LoadingSpinner />
+        {/* HERO */}
+        {component1Loaded && <Hero handle={handleComponent2} />}
+
+        {/* ABOUT */}
+        {component2Loaded ? (
+          <About handle={handleComponent3} />
         ) : (
-          loadedSections.map((section) => (
-            <div key={section.key}>{section.component}</div>
-          ))
+          component1Loaded && <LoadingSpinner />
+        )}
+
+        {/* PORTFOLIO */}
+        {component3Loaded ? (
+          <Portfolio handle={handleComponent4} />
+        ) : (
+          component2Loaded && <LoadingSpinner />
+        )}
+
+        {/* CONTACT */}
+        {component4Loaded ? (
+          <Contact handle={handleComponent5} />
+        ) : (
+          component3Loaded && <LoadingSpinner />
+        )}
+
+        {/* COPYRIGHT */}
+        {component5Loaded ? (
+          <Copyright />
+        ) : (
+          component4Loaded && <LoadingSpinner />
         )}
       </div>
     </div>
