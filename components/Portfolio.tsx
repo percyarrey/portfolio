@@ -190,21 +190,23 @@ function Portfolio() {
               onLoad={() => setGalleryLoading(false)} // Update loading state when the image is loaded
               onError={() => setGalleryLoading(false)} // Ensure loading state is reset on error
             />
-            <div className="flex justify-between w-full mt-4 absolute mb-4">
-              <button
-                onClick={previousImage}
-                className="text-white text-3xl bg-blue rounded-full p-2"
-              >
-                &lt; {/* Previous */}
-              </button>
+            {currentProject.images.length >= 2 && (
+              <div className="flex justify-between w-full mt-4 absolute mb-4">
+                <button
+                  onClick={previousImage}
+                  className="text-white text-3xl bg-blue rounded-full p-2"
+                >
+                  &lt; {/* Previous */}
+                </button>
 
-              <button
-                onClick={nextImage}
-                className="text-white text-3xl bg-blue rounded-full p-2"
-              >
-                &gt; {/* Next */}
-              </button>
-            </div>
+                <button
+                  onClick={nextImage}
+                  className="text-white text-3xl bg-blue rounded-full p-2"
+                >
+                  &gt; {/* Next */}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}
