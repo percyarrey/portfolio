@@ -214,7 +214,7 @@ function Portfolio() {
 
 // Loading Spinner Component
 const LoadingSpinner = () => (
-  <div className="loader animate-spin rounded-full border-4 border-t-4 border-blue h-12 w-12">
+  <div className="loader animate-spin rounded-full border-4 border-t-4 border-blue h-12 w-12 overflow-hidden">
     <div className="w-full h-4 bg-white absolute -bottom-2"></div>
   </div>
 );
