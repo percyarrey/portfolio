@@ -75,7 +75,7 @@ export default function Header() {
           >
             <Image src="/icon.png" className="h-8" alt="TAN TECH Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              TAN TECH
+              TAN <span className="hidden sm:flex">TECH</span>
             </span>
           </a>
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
