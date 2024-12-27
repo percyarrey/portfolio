@@ -23,6 +23,23 @@
     ],
     "tools": ["Angular"]
   },
+
+  {
+    "name": "Freelance Store",
+    "description": "A Complete Functional E-commerce website that has both client side and Admin panel",
+    "link": "https://github.com/percyarrey/JobMaster",
+    "images": [
+      "freelance/img1.png",
+      "freelance/img2.png",
+      "freelance/img3.png",
+      "freelance/img4.png",
+      "freelance/img5.png",
+      "freelance/img6.png",
+      "freelance/img7.png"
+    ],
+    "tools": ["Laravel"]
+  },
+
   {
     "name": "Boyong Lab Paps Solution",
     "description": "A static website built for Boyong Lab using HTML, JavaScript, and Bootstrap.",
@@ -50,6 +67,13 @@
       "boyonglab/img2.png",
       "boyonglab/img3.png"
     ],
+    "tools": ["Bootstrap"]
+  },
+  {
+    "name": "SkillsBag Academy",
+    "description": "A course selling website build with Bootstrap and JavaScript.",
+    "link": "https://github.com/percyarrey/Skillbags",
+    "images": ["skillsbag/img1.png"],
     "tools": ["Bootstrap"]
   }
 ]

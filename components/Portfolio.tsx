@@ -186,7 +186,7 @@ function Portfolio(props) {
             )}
             <Image
               src={
-                "images/projects/" + currentProject.images[currentImageIndex]
+                "/images/projects/" + currentProject.images[currentImageIndex]
               }
               fill
               alt={`Gallery image ${currentImageIndex + 1}`}
