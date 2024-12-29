@@ -7,16 +7,16 @@ import ScrollReveal from "./ui/ScrollReveal";
 import { FocusCards } from "./ui/focus-cards";
 
 // Loading Spinner Component
-const LoadingSpinner = () => (
+/* const LoadingSpinner = () => (
   <div className="loader animate-spin rounded-full border-4 border-t-4 border-blue h-12 w-12 overflow-hidden flex justify-center items-center ">
     <div className="w-full h-[2px] bg-blue"></div>
   </div>
-);
+); */
 
 function GraphicPortfolio(props) {
   useEffect(() => {
     props.handle();
-  }, []);
+  }, [props]);
 
   // State to manage the number of visible cards
   const [visibleCount, setVisibleCount] = useState(4); // Start with 8 cards

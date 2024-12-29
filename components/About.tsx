@@ -22,14 +22,13 @@ function About(props) {
       console.log(error);
     }
   };
-
   useEffect(() => {
     props.handle();
     window.addEventListener("mousemove", handleMouseMove);
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [props]);
 
   const tabs = [
     { id: "freelancing", label: "Freelancing" },

@@ -4,17 +4,14 @@ import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 
 export const Card = React.memo(
-  ({
-    card,
-    index,
-    hovered,
-    setHovered,
-  }: {
+  (
+    { card, index, hovered, setHovered } /* : {
     card: any;
     index: number;
     hovered: number | null;
     setHovered: React.Dispatch<React.SetStateAction<number | null>>;
-  }) => (
+  } */
+  ) => (
     <div
       onMouseEnter={() => setHovered(index)}
       onMouseLeave={() => setHovered(null)}

@@ -14,7 +14,7 @@ function WebPortfolio(props) {
   const [galleryLoading, setGalleryLoading] = useState(true); // Loading state for gallery images
   useEffect(() => {
     props.handle();
-  }, []);
+  }, [props]);
   const tools = [
     "All",
     "Next.js",

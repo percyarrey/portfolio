@@ -6,7 +6,7 @@ import ScrollReveal from "./ui/ScrollReveal";
 function Contact(props) {
   useEffect(() => {
     props.handle();
-  }, []);
+  }, [props]);
   const [formData, setFormData] = useState({
     name: "",
     email: "",

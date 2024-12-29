@@ -7,7 +7,7 @@ import { Meteors } from "./ui/meteors";
 function Hero(props) {
   useEffect(() => {
     props.handle();
-  }, []);
+  }, [props]);
   return (
     <div
       className="md:flex items-center mx-auto max-w-screen-xl px-4 text-center md:text-left relative overflow-x-hidden"
