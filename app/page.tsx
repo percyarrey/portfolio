@@ -6,7 +6,8 @@ import Header from "@/components/Header";
 // Dynamically import components
 const Hero = dynamic(() => import("@/components/Hero"));
 const About = dynamic(() => import("@/components/About"));
-const Portfolio = dynamic(() => import("@/components/Portfolio"));
+const WebPortfolio = dynamic(() => import("@/components/WebPortfolio"));
+const GraphicPortfolio = dynamic(() => import("@/components/GraphicPortfolio"));
 const Contact = dynamic(() => import("@/components/Contact"));
 const Copyright = dynamic(() => import("@/components/Copyright"));
 
@@ -24,6 +25,7 @@ export default function Home() {
   const [component3Loaded, setComponent3Loaded] = useState(false);
   const [component4Loaded, setComponent4Loaded] = useState(false);
   const [component5Loaded, setComponent5Loaded] = useState(false);
+  const [component6Loaded, setComponent6Loaded] = useState(false);
 
   useEffect(() => {
     setComponent1Loaded(true); // Load the Hero component first
@@ -44,6 +46,9 @@ export default function Home() {
   const handleComponent5 = () => {
     setComponent5Loaded(true); // Load the Copyright component
   };
+  const handleComponent6 = () => {
+    setComponent6Loaded(true); // Load the Copyright component
+  };
 
   return (
     <div>
@@ -61,25 +66,32 @@ export default function Home() {
           component1Loaded && <LoadingSpinner />
         )}
 
-        {/* PORTFOLIO */}
+        {/* WEB PORTFOLIO */}
         {component3Loaded ? (
-          <Portfolio handle={handleComponent4} />
+          <WebPortfolio handle={handleComponent4} />
         ) : (
           component2Loaded && <LoadingSpinner />
         )}
 
-        {/* CONTACT */}
+        {/* GRAPHIC PORTFOLIO */}
         {component4Loaded ? (
-          <Contact handle={handleComponent5} />
+          <GraphicPortfolio handle={handleComponent5} />
         ) : (
           component3Loaded && <LoadingSpinner />
         )}
 
-        {/* COPYRIGHT */}
+        {/* CONTACT */}
         {component5Loaded ? (
-          <Copyright />
+          <Contact handle={handleComponent6} />
         ) : (
           component4Loaded && <LoadingSpinner />
+        )}
+
+        {/* COPYRIGHT */}
+        {component6Loaded ? (
+          <Copyright />
+        ) : (
+          component5Loaded && <LoadingSpinner />
         )}
       </div>
     </div>

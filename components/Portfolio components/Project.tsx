@@ -19,6 +19,7 @@ function Project({ LoadingSpinner, project }) {
         <Image
           src={"/images/projects/" + project.images[0]}
           fill
+          sizes="auto"
           alt={project.name}
           className="w-full h-full object-cover object-top"
           onLoad={() => {

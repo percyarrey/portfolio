@@ -1,11 +1,11 @@
 "use client"; // Ensure this is at the top if you're using Next.js with client components
 import React, { useEffect, useState } from "react";
-import projects from "../data/projects.json";
+import projects from "../data/WebData.json";
 import Project from "./Portfolio components/Project";
 import ScrollReveal from "./ui/ScrollReveal";
 import Image from "next/image";
 
-function Portfolio(props) {
+function WebPortfolio(props) {
   const [selectedTool, setSelectedTool] = useState("All");
   const [visibleCount, setVisibleCount] = useState(2);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
@@ -22,6 +22,7 @@ function Portfolio(props) {
     "Laravel",
     "React Native",
     "Bootstrap",
+    "UI/UX Design",
   ];
 
   const filteredProjects =
@@ -73,8 +74,30 @@ function Portfolio(props) {
       </div>
 
       <ScrollReveal>
+        {/* SUBTITLE */}
+        <div className="font-bold mt-5 font-poppins text-green-600">
+          <span className="flex items-center justify-end">
+            <svg
+              fill="currentColor"
+              viewBox="0 -64 640 640"
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 mr-2" // Adjust size as needed
+            >
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path>
+              </g>
+            </svg>
+            <span className="whitespace-nowrap">WEB PROJECT</span>
+          </span>
+        </div>
         {/* Tabs for filtering */}
-        <div className="mt-9">
+        <div className="mt-5">
           <div className="flex space-x-4 w-full overflow-x-auto">
             {tools.map((tool) => (
               <button
@@ -189,6 +212,7 @@ function Portfolio(props) {
                 "/images/projects/" + currentProject.images[currentImageIndex]
               }
               fill
+              sizes="auto"
               alt={`Gallery image ${currentImageIndex + 1}`}
               className="h-full w-full object-contain" // Maintains aspect ratio
               onLoad={() => setGalleryLoading(false)} // Update loading state when the image is loaded
@@ -225,4 +249,4 @@ const LoadingSpinner = () => (
   </div>
 );
 
-export default Portfolio;
+export default WebPortfolio;
