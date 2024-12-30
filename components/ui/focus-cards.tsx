@@ -24,7 +24,10 @@ export const Card = React.memo(
         src={"/images/graphic/" + card.src}
         alt={card.title}
         fill
-        className="object-cover absolute inset-0"
+        className={cn(
+          " absolute inset-0",
+          hovered === index ? " object-contain" : "object-cover"
+        )}
       />
       <div
         className={cn(
