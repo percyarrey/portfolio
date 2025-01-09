@@ -73,9 +73,14 @@ export default function Header() {
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <Image src="/icon.png" width={32} height={32} alt="TAN TECH Logo" />
+            <Image
+              src="/icon.png"
+              width={32}
+              height={32}
+              alt="TAN SOLUTION Logo"
+            />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              TAN <span className="hidden sm:inline-block ml-1"> TECH</span>
+              TAN <span className="hidden sm:inline-block ml-1"> SOLUTION</span>
             </span>
           </a>
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
