@@ -17,6 +17,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Tanyitiku Percy Portfolio",
   description: "This is a portfolio project created with Next.js",
+  
 };
 
 export default function RootLayout({
