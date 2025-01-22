@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -14,7 +16,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Tanyitiku Percy Portfolio",
-  description: "This if a portfolio project created with next js",
+  description: "This is a portfolio project created with Next.js",
 };
 
 export default function RootLayout({
@@ -24,9 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        <meta name="google-site-verification" content="MkAKKGuGMaUOlw1VnnwTY7eBedfxyQOWmn37bmHiu_4" />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
         <script></script>
       </body>
