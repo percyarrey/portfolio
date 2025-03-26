@@ -1,5 +1,17 @@
 [
   {
+    "name": "GiftApex",
+    "description": "A web application designed to streamline the process of swapping gift cards for cash",
+    "link": "https://giftapex.net",
+    "images": [
+      "giftapex/img1.png",
+      "giftapex/img2.png",
+      "giftapex/img3.png",
+      "giftapex/img4.png"
+    ],
+    "tools": ["Next.js"]
+  },
+  {
     "name": "Boat Engine Part",
     "description": "A complete e-commerce website built with Next.js, Tailwind CSS, and MongoDB.",
     "link": "https://boat-engine-part.vercel.app",
