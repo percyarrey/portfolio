@@ -26,7 +26,7 @@
   {
     "name": "JobMaster",
     "description": "A remote job finder app created with Angular.js, PrimeNG, Nest.js, and PostgreSQL.",
-    "link": "https://github.com/percyarrey/JobMaster",
+    "link": "http://54.89.40.150:4200/",
     "images": [
       "jobmaster/img1.png",
       "jobmaster/img2.png",
